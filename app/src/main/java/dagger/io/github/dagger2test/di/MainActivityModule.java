@@ -3,6 +3,7 @@ package dagger.io.github.dagger2test.di;
 import dagger.Module;
 import dagger.Provides;
 import dagger.io.github.dagger2test.MainActivity;
+import dagger.io.github.dagger2test.data.Boos;
 import dagger.io.github.dagger2test.data.User;
 
 /**
@@ -20,4 +21,7 @@ import dagger.io.github.dagger2test.data.User;
     return mMainActivity;
   }
 
+  @Provides Boos provideBoos(@UserQualifier("fakeUser") User user){
+    return new Boos(user);
+  }
 }
